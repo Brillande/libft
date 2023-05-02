@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 21:24:06 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:45:39 by emedina-         ###   ########.fr       */
+/*   Created: 2023/05/01 19:01:13 by emedina-          #+#    #+#             */
+/*   Updated: 2023/05/01 21:11:26 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int ft_atoi(const char *str)
 {
-	int	len;
-	int	i;
+	int i;
+	int result;
+	int minus;
 
-	len = ft_strlen((char *)s);
 	i = 0;
-	if (*s == (char)c)
-		return ((char *)s);
-	while (len >= 0)
+	result = 0;
+	minus = 1;
+	 while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+    {
+        i++;
+    }
+	if (str[i] == '-')
+    {
+        minus = - 1;
+        i++;
+    }
+	else if (str[i] == '+')
+		i++;
+	
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (s[len] != (char)c)
-		{
-			i = ((char *)s)[len--];
-		}
-		return ((char *)s);
+		result = result * 10 + (str[i] - '0');
+		
+		i++;
 	}
-	return (NULL);
+	return (result * minus);
 }
-/*
-int main (void)
-{
-	if(ft_strrchr("jefjeowjofew", 'j'))
-	{
-		printf("%s\n", "funciona");
-	}
-	else
-	{
-		printf("%s\n", "nulo");
-	}
-}
-*/

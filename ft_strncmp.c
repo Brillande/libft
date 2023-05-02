@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 21:24:06 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:45:39 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/27 18:47:44 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/27 18:48:46 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	len;
-	int	i;
+	size_t i;
 
-	len = ft_strlen((char *)s);
 	i = 0;
-	if (*s == (char)c)
-		return ((char *)s);
-	while (len >= 0)
+	while (n > 0 && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		if (s[len] != (char)c)
-		{
-			i = ((char *)s)[len--];
-		}
-		return ((char *)s);
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+		n--;
 	}
-	return (NULL);
-}
-/*
-int main (void)
-{
-	if(ft_strrchr("jefjeowjofew", 'j'))
-	{
-		printf("%s\n", "funciona");
-	}
+	if (n == 0)
+		return (0);
 	else
-	{
-		printf("%s\n", "nulo");
-	}
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-*/
