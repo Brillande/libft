@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:49:35 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:03:35 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:09:35 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@ int	ft_isalpha(int c)
 		return (0);
 	}
 }
-/*
+
 int	main(void)
 {
+	int i = 0;
+	int c = 60;
+	while(i++ < 10)
+	{
+		printf("%d.El return de la ft es %d\n", i, ft_isalpha(c));
+		c++;
+	}
+	/* 
 	if(ft_isalpha('5'))
 	{
 		printf("%s\n", "Es alfanumerico");
@@ -49,6 +57,6 @@ int	main(void)
 	else
 	{
 		printf("%s\n", "No es alfanumerico");
-	}
+	} */
+	return(0);
 }
-*/

@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 21:24:06 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:45:39 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/28 09:38:35 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/28 10:59:22 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	len;
-	int	i;
+	size_t i;
+	const unsigned char * str1;
+	const unsigned char * str2;
 
-	len = ft_strlen((char *)s);
+	str1 = s1;
+	str2 = s2;
 	i = 0;
-	if (*s == (char)c)
-		return ((char *)s);
-	while (len >= 0)
+	while (i < n)
 	{
-		if (s[len] != (char)c)
+		if (str1[i] != str2[i])
 		{
-			i = ((char *)s)[len--];
+			return (size_t)(str1[i] - str2[i]);
 		}
-		return ((char *)s);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
-/*
-int main (void)
-{
-	if(ft_strrchr("jefjeowjofew", 'j'))
-	{
-		printf("%s\n", "funciona");
-	}
-	else
-	{
-		printf("%s\n", "nulo");
-	}
-}
-*/

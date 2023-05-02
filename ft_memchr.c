@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 21:24:06 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:45:39 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/28 09:32:57 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/28 09:33:08 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	len;
-	int	i;
+	size_t	i;
 
-	len = ft_strlen((char *)s);
 	i = 0;
-	if (*s == (char)c)
-		return ((char *)s);
-	while (len >= 0)
+	while (i < n)
 	{
-		if (s[len] != (char)c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 		{
-			i = ((char *)s)[len--];
+			return ((char *)&s[i]);
 		}
-		return ((char *)s);
+		i++;
 	}
 	return (NULL);
 }
-/*
-int main (void)
-{
-	if(ft_strrchr("jefjeowjofew", 'j'))
-	{
-		printf("%s\n", "funciona");
-	}
-	else
-	{
-		printf("%s\n", "nulo");
-	}
-}
-*/
