@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 21:24:06 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:45:39 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:49:25 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 }
 /*
 int main (void)
-{
+{git add
 	if(ft_strrchr("jefjeowjofew", 'j'))
 	{
 		printf("%s\n", "funciona");
