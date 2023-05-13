@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emedina- <emedina-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:05:58 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/14 16:59:35 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/04/21 20:50:20 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
@@ -23,7 +23,7 @@ int	ft_isdigit(int c)
 		return (0);
 	}
 }
-
+/*
 int	main(void)
 {
 	if(ft_isdigit('5'))
@@ -43,3 +43,4 @@ int	main(void)
 		printf("%s\n", "No es alfanumerico");
 	}
 }
+*/

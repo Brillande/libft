@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: emedina- <emedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/05/08 17:13:36 by emedina-          #+#    #+#             */
+/*   Updated: 2023/05/08 17:32:46 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
+    int i;
+
+    i = 0;
+    while (s[i] != '\0')
+    {
+        write(fd, &s[i], 1);
+        i++;
+    }
+    write(fd, "\n", 1);
 }
-/*
-int main ()
-{
-	int i;
-	char str[] = "salam5anCa7";
-	i = 0;
-	while (str[i] != '\0')
-	{
-		str[i] = ft_tolower(str[i]);
-		i++;
-	}
-	printf("%s\n", str);
-	return (0);
-}
-*/

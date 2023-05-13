@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 13:02:03 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/19 15:26:23 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/21 20:51:19 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/21 21:59:23 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int *ptr;
+	unsigned char *ptr;
 	size_t i;
 
-	i = 0;
 	ptr = b;
+	i = 0;
 	while (i < len)
 	{
-		ptr = c;
+		ptr[i] = c;
 		i++;
 	}
 	return (ptr);

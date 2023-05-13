@@ -1,54 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:49:02 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 20:50:25 by emedina-         ###   ########.fr       */
+/*   Created: 2023/05/09 10:34:52 by emedina-          #+#    #+#             */
+/*   Updated: 2023/05/09 15:36:22 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= ' ' && c <= '~')
+	char	str[11];
+	int		i;
+
+	i = 0;
+	if (n == 0)
 	{
-		return (1);
+		write(fd, "0", 1);
 	}
-	else
+	if (n == INT_MIN)
 	{
-		return (0);
+		write(fd, "-2147483648", 11);
+		return ;
+	} 
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	} 
+	while (n > 0)
+	{
+		str[i++] = n % 10 + '0';
+		n /= 10;
+	}
+	while (--i >= 0)
+	{
+		write(fd, &str[i], 1);
 	}
 }
-/*
-int	main(void)
+
+/* int main (void)
 {
-	if(ft_isprint('5'))
-	{
-		printf("%s\n", "Es alfanumerico");
-	}
-	else
-	{
-		printf("%s\n", "No es alfanumerico");
-	}
-	if(ft_isprint('g'))
-	{
-		printf("%s\n", "Es alfanumerico");
-	}
-	else
-	{
-		printf("%s\n", "No es alfanumerico");
-	}
-	if(ft_isprint('ñ'))
-	{
-		printf("%s\n", "Es alfanumerico");
-	}
-	else
-	{
-		printf("%s\n", "No es alfanumerico");
-	}
-}
-*/
+	ft_putnbr_fd(-2147483648LL, 2);
+}  */

@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/05/06 14:32:52 by emedina-          #+#    #+#             */
+/*   Updated: 2023/05/06 14:32:55 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
-}
-/*
-int main ()
-{
-	int i;
-	char str[] = "salam5anCa7";
+	size_t len;
+	char *result;
+	unsigned int i;
+
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	result = malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while(s[i])
 	{
-		str[i] = ft_tolower(str[i]);
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
-	printf("%s\n", str);
-	return (0);
+	result[i] = '\0';
+	return (result);
 }
-*/

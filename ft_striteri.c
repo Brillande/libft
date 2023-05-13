@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/05/06 15:45:17 by emedina-          #+#    #+#             */
+/*   Updated: 2023/05/13 14:55:46 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+/* void ft_par_upper(unsigned int n, char *s)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
-}
-/*
-int main ()
+	(void)n;
+	(void)s;
+} */
+
+void ft_striteri(char *s, void (*f)(unsigned int,char*))
 {
-	int i;
-	char str[] = "salam5anCa7";
+	unsigned int i;
+
 	i = 0;
-	while (str[i] != '\0')
+	if (s && f)
 	{
-		str[i] = ft_tolower(str[i]);
-		i++;
+		while (s[i])
+		{
+			(*f)(i, &s[i]);
+			i++;
+		}
 	}
-	printf("%s\n", str);
-	return (0);
 }
-*/
+/* int main (void)
+{
+	ft_striteri(NULL, &ft_par_upper);
+} */
