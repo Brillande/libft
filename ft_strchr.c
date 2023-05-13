@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/24 21:23:59 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/24 23:00:04 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char *ft_strchr(const char *s, int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	while (*s)
 	{
-		c = c + 32;
+		if (*s != (char)c)
+		{
+			s++;
+		}
+		else
+		{
+			return ((char *)s);
+		}
 	}
-	return (c);
+	if (*s == (char)c)
+			return ((char *)s);
+	return NULL;
 }
-/*
-int main ()
-{
-	int i;
-	char str[] = "salam5anCa7";
-	i = 0;
-	while (str[i] != '\0')
-	{
-		str[i] = ft_tolower(str[i]);
-		i++;
-	}
-	printf("%s\n", str);
-	return (0);
-}
-*/

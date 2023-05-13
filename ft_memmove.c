@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/22 11:46:53 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/22 15:54:36 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= 'A' && c <= 'Z')
+	size_t				i;
+
+	if (!dst && !src)
 	{
-		c = c + 32;
+		return (NULL);
 	}
-	return (c);
-}
-/*
-int main ()
-{
-	int i;
-	char str[] = "salam5anCa7";
-	i = 0;
-	while (str[i] != '\0')
+	if (dst > src)
 	{
-		str[i] = ft_tolower(str[i]);
-		i++;
+		while (len-- > 0)
+			((char *)dst)[len] = ((char *)src)[len];
 	}
-	printf("%s\n", str);
-	return (0);
+	else 
+	{
+		i = 0;
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }
-*/

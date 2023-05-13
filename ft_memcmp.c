@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 20:50:42 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/21 21:04:21 by emedina-         ###   ########.fr       */
+/*   Created: 2023/04/28 09:38:35 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/28 10:59:22 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c = c + 32;
-	}
-	return (c);
-}
-/*
-int main ()
-{
-	int i;
-	char str[] = "salam5anCa7";
+	size_t i;
+	const unsigned char * str1;
+	const unsigned char * str2;
+
+	str1 = s1;
+	str2 = s2;
 	i = 0;
-	while (str[i] != '\0')
+	while (i < n)
 	{
-		str[i] = ft_tolower(str[i]);
+		if (str1[i] != str2[i])
+		{
+			return (size_t)(str1[i] - str2[i]);
+		}
 		i++;
 	}
-	printf("%s\n", str);
 	return (0);
 }
-*/

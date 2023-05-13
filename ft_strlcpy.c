@@ -1,43 +1,54 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/18 18:55:23 by emedina-          #+#    #+#             */
+/*   Updated: 2023/04/19 11:02:11 by emedina-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	num_copied;
-	size_t	src_len;
+	size_t	i;
+	size_t	aux;
 
-	num_copied = 0;
-	src_len = 0;
-	if (dst == 0 || src == 0)
+	i = 0;
+	aux = 0;
+	while (src[aux])
 	{
-		return (0);
+		aux++;
 	}
-	while (num_copied < dstsize - 1 && src[num_copied] != '\0')
+	if (dstsize < 1)
 	{
-	dst[num_copied] = src[num_copied];
-	num_copied ++;
+		return (aux);
 	}
-	dst[num_copied] = '\0';
-	while (src[src_len] != '\0')
+	while (src[i] != '\0' && i < dstsize - 1)
 	{
-		src_len++;
+		dst[i] = src[i];
+		i++;
 	}
-	return (src_len);
+	dst[i] = '\0';
+	return (aux);
 }
-
+/*
 int	main(void)
 {
-    char destino[10];
-    char origen[] = "Hola, mundo!";
-    size_t num_copied;
+	char	destino[10];
+	char	origen[];
+	size_t	num_copied;
 
-    // Llamar a la función strlcpy
-    num_copied = strlcpy(destino, origen, sizeof(destino));
-
-    // Imprimir el resultado de la copia
-    printf("La cadena de origen es: %s\n", origen);
-    printf("La cadena de destino es: %s\n", destino);
-    printf("Se copiaron %zu caracteres\n", num_copied);
-
-    return 0;
+	origen[] = "Hola, mundo!";
+	// Llamar a la función strlcpy
+	num_copied = strlcpy(destino, origen, sizeof(destino));
+	// Imprimir el resultado de la copia
+	printf("La cadena de origen es: %s\n", origen);
+	printf("La cadena de destino es: %s\n", destino);
+	printf("Se copiaron %zu caracteres\n", num_copied);
+	return (0);
 }
+*/
