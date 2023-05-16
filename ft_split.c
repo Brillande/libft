@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 15:04:40 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/13 17:29:15 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:37:34 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char	*word_dupe(const char *str, char c)
 
 void	fill_words(char **array, const char *str, char c)
 {
-	int	word_index;
-	const char *ptr;
+	int			word_index;
+	const char	*ptr;
 
 	word_index = 0;
 	ptr = str;
@@ -84,8 +84,8 @@ int	count_words(const char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int num_words;
-	char **array;
+	int		num_words;
+	char	**array;
 
 	if (s == NULL)
 		return (NULL);
@@ -112,7 +112,7 @@ char	**ft_split(char const *s, char c)
 	}
 	free(esplit);
 
-	return 0;
+	return (0);
 	}
 
 } */

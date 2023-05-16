@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 11:03:44 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/22 11:03:45 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:41:58 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
-	size_t i;
+	unsigned char	*ptr;
+	size_t	i;
 
 	ptr = s;
 	i = 0;

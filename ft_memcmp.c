@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:38:35 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/28 10:59:22 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:36:01 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t i;
-	const unsigned char * str1;
-	const unsigned char * str2;
+	const unsigned char *str1;
+	const unsigned char *str2;
 
 	str1 = s1;
 	str2 = s2;
