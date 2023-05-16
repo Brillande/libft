@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:55:23 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/19 11:02:11 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:17:34 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (aux);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
 	char	destino[10];
-	char	origen[];
+	char	*origen;
 	size_t	num_copied;
 
-	origen[] = "Hola, mundo!";
-	// Llamar a la función strlcpy
-	num_copied = strlcpy(destino, origen, sizeof(destino));
-	// Imprimir el resultado de la copia
+	origen = "Hola, mundo!";
+
+	num_copied = ft_strlcpy(destino, origen, sizeof(destino));
+	
 	printf("La cadena de origen es: %s\n", origen);
 	printf("La cadena de destino es: %s\n", destino);
 	printf("Se copiaron %zu caracteres\n", num_copied);
 	return (0);
-}
-*/
+} */

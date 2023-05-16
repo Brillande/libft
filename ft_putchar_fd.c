@@ -6,12 +6,13 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 17:00:23 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/06 17:00:24 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:36:54 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_putchar_fd(char c, int fd)
+
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

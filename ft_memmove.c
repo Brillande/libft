@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 11:46:53 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/22 15:54:36 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:36:24 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t				i;
+	size_t	i;
 
 	if (!dst && !src)
 	{
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (len-- > 0)
 			((char *)dst)[len] = ((char *)src)[len];
 	}
-	else 
+	else
 	{
 		i = 0;
 		while (i < len)
