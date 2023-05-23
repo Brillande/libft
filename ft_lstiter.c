@@ -6,19 +6,19 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 12:21:21 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 12:21:22 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:59:53 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	t_list	*current;
+
 	if (!lst || !f)
-		return;
-
-	t_list *current = lst;
-
+		return ;
+	current = lst;
 	while (current)
 	{
 		f(current->content);

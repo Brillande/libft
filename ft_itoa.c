@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 12:22:15 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 13:01:46 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:59:44 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,18 @@ char	*ft_itoa(int n)
 	if (!result)
 		return (NULL);
 	if (n < 0)
+	{
 		result[i++] = '-';
 		n = -n;
+	}
 	else if (n == 0)
 		result[i++] = '0';
-	while (n)
+	while (n != 0)
+	{
 		result[--len] = absolute_value(n % 10) + '0';
-		n /= 10;
+		n = n / 10;
 		i++;
+	}
 	result[i] = '\0';
 	return (result);
 }

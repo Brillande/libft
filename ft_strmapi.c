@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 14:32:52 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 12:38:44 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:44:35 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t len;
-	char *result;
-	unsigned int i;
+	size_t			len;
+	char			*result;
+	unsigned int	i;
 
 	if (!s || !f)
 		return (NULL);
