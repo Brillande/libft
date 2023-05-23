@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 18:47:44 by emedina-          #+#    #+#             */
-/*   Updated: 2023/04/27 18:48:46 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:44:44 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (n > 0 && (s1[i] != '\0' || s2[i] != '\0'))

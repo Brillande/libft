@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 15:45:17 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 12:55:14 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:43:33 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 } */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	if (s && f)
 	{

@@ -6,7 +6,7 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 17:13:36 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 12:37:09 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/20 16:17:04 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+		write(fd, "\n", 1);
 	}
-	write(fd, "\n", 1);
 }
+/* int main (void)
+{
+	char *s = NULL;
+	int fd = 1;
+	ft_putendl_fd(s, fd);
+	return (0);
+} */

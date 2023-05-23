@@ -6,15 +6,18 @@
 /*   By: emedina- <emedina-@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 12:40:19 by emedina-          #+#    #+#             */
-/*   Updated: 2023/05/16 14:51:12 by emedina-         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:43:59 by emedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -67,3 +70,4 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+#endif
